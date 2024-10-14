@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votación Ironman</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Awsome Heroes</h1>
+        <nav>
+            <a href="#">Heroes Anteriores</a>
+            <a href="#">¿Cómo Funciona?</a>
+            <a href="#">Iniciar sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="image-background">
+            <img src="assets/img/ironman.jpg" alt="Ironman" class="ironman-image">
+        </div>
+
+        <div class="hero-section">
+            <h2>Dinos tu opinión sobre Ironman?</h2>
+            <p>¿Cuál es tu voto?</p>
+            <div class="vote-buttons">
+                <button id="like-button">👍 Me gusta</button>
+                <button id="dislike-button">👎 No me gusta</button>
+            </div>
+            <div id="confirmation-message" style="display: none;">
+                <p>¡Tu voto ha sido registrado con éxito!</p>
+                <button id="back-to-vote">Volver a votar</button>
+            </div>
+            <div class="vote-results">
+                <p>Porcentaje de "Me gusta": <span id="percentage-like">0%</span></p>
+                <p>Porcentaje de "No me gusta": <span id="percentage-dislike">0%</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Lorem Ipsum. Dolor IP lorem ip.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
