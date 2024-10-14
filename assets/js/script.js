@@ -24,11 +24,16 @@ const updatePercentages = () => {
     const likePercentage = totalVotes ? Math.round((votes.like / totalVotes) * 100) : 0;
     const dislikePercentage = totalVotes ? Math.round((votes.dislike / totalVotes) * 100) : 0;
 
+    // Actualiza el texto de los porcentajes
     percentageLike.textContent = `${likePercentage}%`;
     percentageDislike.textContent = `${dislikePercentage}%`;
+
+    // Actualiza la barra de progreso
+    document.querySelector('.progress-bar-like').style.width = `${likePercentage}%`;
+    document.querySelector('.progress-bar-dislike').style.width = `${dislikePercentage}%`;
 };
 
-// Actualizamos los porcentajes al cargar la página
+// Actualizamos los porcentajes y las barras al cargar la página
 updatePercentages();
 
 // Función para manejar el voto
@@ -37,6 +42,7 @@ const vote = (type) => {
     votes[type]++;
     localStorage.setItem('votes', JSON.stringify(votes));
     
+    // Actualizamos porcentajes y barras
     updatePercentages();
     
     // Ocultamos los botones de votar

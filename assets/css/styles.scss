@@ -11,7 +11,6 @@ header {
     padding: 20px;
     text-align: center;
     color: white;
-    
 
     h1 {
         margin: 0;
@@ -32,127 +31,397 @@ main {
     height: auto;
     width: 100%;
     display: flex;
+    flex-direction: column; // Cambiado a column para alinear verticalmente
     justify-content: center;
     align-items: center;
     min-height: 10vh;
     position: relative;
     border-radius: 50px;
-    border:5px solid black;
 }
+    /*IronMan*/
+    .Contenedor-ImagenPrincipal {
+        position: relative;
+        width: 80%;
+        height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-.Contenedor-ImagenPrincipal {
-    position: relative;
-    width: 80%;
-    height: 650px;
+
+        .ironman-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            border-radius: 15px;
+        }
+
+        .Contenedor-Votacion 
+        {
+            margin-left: 550px;
+            position: relative;
+            background: rgba(255, 255, 255, 0); // Fondo semi-transparente
+            backdrop-filter: blur(10px); // Aplica un desenfoque al fondo
+            padding: 30px;
+            border-radius: 3000px;
+            z-index: 2;
+            width: 30%;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+            h2 {
+                margin: 0 0 20px;
+            }
+
+            p {
+                margin: 10px 0;
+            }
+
+            .vote-buttons {
+                margin: 20px 0;
+
+                button {
+                    background: #007bff;
+                    color: white;
+                    border: none;
+                    padding: 12px 20px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    margin: 0 10px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background: #0056b3;
+                        transform: translateY(-3px);
+                        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+                    }
+
+                    &:active {
+                        transform: translateY(1px);
+                        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+                    }
+                }
+
+                #dislike-button {
+                    background: #dc3545;
+
+                    &:hover {
+                        background: #a71d2a;
+                    }
+                }
+            }
+
+            #confirmation-message {
+                margin-top: 20px;
+
+                p {
+                    font-weight: bold;
+                }
+
+                button {
+                    background: #28a745;
+                    padding: 12px 20px;
+                    border-radius: 8px;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    margin-top: 10px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background: #218838;
+                        transform: translateY(-3px);
+                        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+                    }
+
+                    &:active {
+                        transform: translateY(1px);
+                        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+                    }
+                }
+            }
+
+            .vote-results {
+                margin-top: 20px;
+
+                .progress-bar-container {
+                    width: 100%; /* Ancho completo del contenedor */
+                    background: #e0e0e0; /* Fondo gris claro para la barra */
+                    border-radius: 5px; /* Bordes redondeados */
+                    position: relative; /* Para posicionar las barras relativas a este contenedor */
+                    height: 20px; /* Altura de la barra */
+                    overflow: hidden; /* Para que no se desborden las barras */
+                }
+
+                .progress-bar-like {
+                    height: 100%; /* Altura completa */
+                    background-color: #007bff; /* Color azul para "Me gusta" */
+                    width: 0; /* Inicialmente en 0% */
+                    transition: width 0.3s; /* Transición suave al cambiar el ancho */
+                }
+
+                .progress-bar-dislike {
+                    height: 100%; /* Altura completa */
+                    background-color: #ec0018; /* Color rojo para "No me gusta" */
+                    width: 0; /* Inicialmente en 0% */
+                    transition: width 0.3s; /* Transición suave al cambiar el ancho */
+                    position: absolute; /* Posición absoluta para superponerse */
+                    left: 0; /* Alineado al inicio */
+                }
+            }            
+        }
+    }
+.Contenedor-OtherSuperHeros{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 50%;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+
+    /*SuperMan*/
+    .SuperMan-card {
+    
+    border: 1px solid #ccc; /* Borde del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    margin: 20px; /* Espaciado externo */
+    padding: 10px; /* Espaciado interno */
+    width: 300px; /* Ancho del contenedor, ajustable según tus necesidades */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex; /* Flexbox para organizar la imagen y la votación */
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra los elementos */
+    }
+
+    .superman-image {
+        width: 100%; /* Ajusta la imagen al ancho del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+
+    .contenedor-votacion-SuperMan {
+        text-align: center; /* Centra el texto dentro del contenedor de votación */
+        margin-top: 10px; /* Espaciado entre la imagen y el texto */
+    }
     
 
-    .ironman-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
+    /*BatMan*/
+    .BatMan-card {
+        
+        border: 1px solid #ccc; /* Borde del contenedor */
+        border-radius: 8px; /* Bordes redondeados */
+        margin: 20px; /* Espaciado externo */
+        padding: 10px; /* Espaciado interno */
+        width: 300px; /* Ancho del contenedor, ajustable según tus necesidades */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        display: flex; /* Flexbox para organizar la imagen y la votación */
+        flex-direction: column; /* Coloca los elementos en columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .BatMan-image {
+        width: 100%; /* Ajusta la imagen al ancho del contenedor */
+        height: 440px; /* Mantiene la proporción de la imagen */
+    }
+
+    .contenedor-votacion-BatMan {
+        text-align: center; /* Centra el texto dentro del contenedor de votación */
+        margin-top: 10px; /* Espaciado entre la imagen y el texto */
+    }
+
+    /*Thor*/
+    .Thor-card {
+        
+        border: 1px solid #ccc; /* Borde del contenedor */
+        border-radius: 8px; /* Bordes redondeados */
+        margin: 20px; /* Espaciado externo */
+        padding: 10px; /* Espaciado interno */
+        width: 300px; /* Ancho del contenedor, ajustable según tus necesidades */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        display: flex; /* Flexbox para organizar la imagen y la votación */
+        flex-direction: column; /* Coloca los elementos en columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .Thor-image {
+        width: 100%; /* Ajusta la imagen al ancho del contenedor */
+        height: 440px; /* Mantiene la proporción de la imagen */
+    }
+
+    .contenedor-votacion-Thor {
+        text-align: center; /* Centra el texto dentro del contenedor de votación */
+        margin-top: 10px; /* Espaciado entre la imagen y el texto */
+    }
+
+    /*SpiderMan*/
+    .SpiderMan-card {
+        
+        border: 1px solid #ccc; /* Borde del contenedor */
+        border-radius: 8px; /* Bordes redondeados */
+        margin: 20px; /* Espaciado externo */
+        padding: 10px; /* Espaciado interno */
+        width: 300px; /* Ancho del contenedor, ajustable según tus necesidades */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        display: flex; /* Flexbox para organizar la imagen y la votación */
+        flex-direction: column; /* Coloca los elementos en columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .SpiderMan-image {
+        width: 100%; /* Ajusta la imagen al ancho del contenedor */
+        height: 440px; /* Mantiene la proporción de la imagen */
+    }
+
+    .contenedor-votacion-SpiderMan {
+        text-align: center; /* Centra el texto dentro del contenedor de votación */
+        margin-top: 10px; /* Espaciado entre la imagen y el texto */
+    }
+            
+    
+    
+            .contenedor-votacion-SuperMan,
+            .contenedor-votacion-BatMan,
+            .contenedor-votacion-Thor,
+            .contenedor-votacion-SpiderMan {
+                background: rgba(255, 255, 255, 0.9); // Fondo blanco con más opacidad
+                padding: 20px; // Espacio interno
+                border-radius: 0 0 15px 15px; // Bordes redondeados en la parte inferior
+                text-align: center; // Centra el texto
+                box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2); // Sombra en la parte superior para destacar
+    
+                h2 {
+                    margin: 0 0 10px; // Espacio debajo del título
+                }
+    
+                p {
+                    margin: 10px 0; // Espacio alrededor de los párrafos
+                }
+    
+                .vote-buttons {
+                    margin: 15px 0; // Espacio alrededor de los botones
+    
+                    button {
+                        background: #007bff; // Color de fondo para "Me gusta"
+                        color: white; // Color de texto blanco
+                        border: none; // Sin borde
+                        padding: 10px 15px; // Espaciado interno
+                        border-radius: 8px; // Bordes redondeados
+                        cursor: pointer; // Cambia el cursor al pasar sobre el botón
+                        margin: 0 5px; // Espacio entre botones
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sombra para dar profundidad
+                        transition: all 0.3s ease; // Suaviza las transiciones
+    
+                        &:hover {
+                            background: #0056b3; // Color al pasar el mouse
+                            transform: translateY(-2px); // Levanta el botón ligeramente
+                            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); // Aumenta la sombra
+                        }
+    
+                        &:active {
+                            transform: translateY(1px); // Baja el botón ligeramente al hacer clic
+                            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2); // Reduce la sombra
+                        }
+                    }
+    
+                    #dislike-button {
+                        background: #dc3545; // Color rojo para "No me gusta"
+    
+                        &:hover {
+                            background: #a71d2a; // Color al pasar el mouse
+                        }
+                    }
+                }
+    
+                #confirmation-message-superman,
+                #confirmation-message-BatMan,
+                #confirmation-message-Thor,
+                #confirmation-message-SpiderMan {
+                    margin-top: 10px;
+    
+                    p {
+                        font-weight: bold; // Texto en negrita
+                    }
+    
+                    button {
+                        background: #28a745; // Color verde para "Volver a votar"
+                        padding: 10px 15px; // Espaciado interno
+                        border-radius: 8px; // Bordes redondeados
+                        border: none; // Sin borde
+                        color: white; // Color de texto blanco
+                        cursor: pointer; // Cambia el cursor al pasar sobre el botón
+                        margin-top: 10px; // Espacio arriba del botón
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sombra para dar profundidad
+                        transition: all 0.3s ease; // Suaviza las transiciones
+    
+                        &:hover {
+                            background: #218838; // Color al pasar el mouse
+                            transform: translateY(-2px); // Levanta el botón ligeramente
+                            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); // Aumenta la sombra
+                        }
+    
+                        &:active {
+                            transform: translateY(1px); // Baja el botón ligeramente al hacer clic
+                            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2); // Reduce la sombra
+                        }
+                    }
+                }
+    
+                .vote-results {
+                    margin-top: 15px;
+    
+                    .progress-bar-container {
+                        width: 100%; // Ancho completo del contenedor
+                        background: #e0e0e0; // Fondo gris claro para la barra
+                        border-radius: 5px; // Bordes redondeados
+                        position: relative; // Para posicionar las barras relativas a este contenedor
+                        height: 20px; // Altura de la barra
+                        overflow: hidden; // Para que no se desborden las barras
+                    }
+    
+                    .progress-bar-like,
+                    .progress-bar-dislike {
+                        height: 100%; // Altura completa
+                        transition: width 0.3s; // Transición suave al cambiar el ancho
+                    }
+    
+                    .progress-bar-like {
+                        background-color: #007bff; // Color azul para "Me gusta"
+                        width: 0; // Inicialmente en 0%
+                    }
+    
+                    .progress-bar-dislike {
+                        background-color: #dc3545; // Color rojo para "No me gusta"
+                        width: 0; // Inicialmente en 0%
+                        position: absolute; // Posición absoluta para superponerse
+                        left: 0; // Alineado al inicio
+                    }
+                }
+            }
+}
+@media (max-width: 768px) {
+    .Contenedor-ImagenPrincipal {
+        flex-direction: column; // Cambia a columna en pantallas más pequeñas
+        align-items: center;
     }
 
     .Contenedor-Votacion {
-        margin-left: 550px;
-        position: relative;
-        background: rgba(255, 255, 255, 0); // Fondo semi-transparente
-        backdrop-filter: blur(10px); // Aplica un desenfoque al fondo
-        padding: 30px;
-        border-radius: 3000px;
-        z-index: 2;
-        width: 30%;
-        max-width: 800px;
-        text-align: center;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        width: 90%; // Ancho más pequeño en móviles
+        margin-left: 0; // Elimina el margen izquierdo
+    }
 
-        h2 {
-            margin: 0 0 20px;
-        }
+    .Contenedor-OtherSuperHeros {
+        width: 100%; // Asegura que se muestre correctamente en móviles
+        justify-content: center; // Centra las tarjetas
+    }
 
-        p {
-            margin: 10px 0;
-        }
-
-        .vote-buttons {
-            margin: 20px 0;
-
-            button {
-                background: #007bff;
-                color: white;
-                border: none;
-                padding: 12px 20px;
-                border-radius: 8px;
-                cursor: pointer;
-                margin: 0 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-
-                &:hover {
-                    background: #0056b3;
-                    transform: translateY(-3px);
-                    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-                }
-
-                &:active {
-                    transform: translateY(1px);
-                    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
-                }
-            }
-
-            #dislike-button {
-                background: #dc3545;
-
-                &:hover {
-                    background: #a71d2a;
-                }
-            }
-        }
-
-        #confirmation-message {
-            margin-top: 20px;
-
-            p {
-                font-weight: bold;
-            }
-
-            button {
-                background: #28a745;
-                padding: 12px 20px;
-                border-radius: 8px;
-                border: none;
-                color: white;
-                cursor: pointer;
-                margin-top: 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-
-                &:hover {
-                    background: #218838;
-                    transform: translateY(-3px);
-                    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-                }
-
-                &:active {
-                    transform: translateY(1px);
-                    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
-                }
-            }
-        }
-
-        .vote-results {
-            margin-top: 20px;
-
-            p {
-                margin: 5px 0;
-            }
-        }
+    .SuperMan-card, .BatMan-card, .Thor-card, .SpiderMan-card {
+        width: 100%; // Tarjetas ocupan el ancho completo en móviles
+        margin: 10px 0; // Espacio entre tarjetas
     }
 }
+
 
 
 footer {
@@ -161,3 +430,4 @@ footer {
     padding: 10px 0;
     background: #eee;
 }
+

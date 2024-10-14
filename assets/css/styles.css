@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -28,14 +29,15 @@ main {
   height: auto;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 10vh;
   position: relative;
   border-radius: 50px;
-  border: 5px solid black;
 }
 
+/*IronMan*/
 .Contenedor-ImagenPrincipal {
   position: relative;
   width: 80%;
@@ -51,6 +53,7 @@ main {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: 1;
+  border-radius: 15px;
 }
 .Contenedor-ImagenPrincipal .Contenedor-Votacion {
   margin-left: 550px;
@@ -130,10 +133,348 @@ main {
 .Contenedor-ImagenPrincipal .Contenedor-Votacion .vote-results {
   margin-top: 20px;
 }
-.Contenedor-ImagenPrincipal .Contenedor-Votacion .vote-results p {
-  margin: 5px 0;
+.Contenedor-ImagenPrincipal .Contenedor-Votacion .vote-results .progress-bar-container {
+  width: 100%; /* Ancho completo del contenedor */
+  background: #e0e0e0; /* Fondo gris claro para la barra */
+  border-radius: 5px; /* Bordes redondeados */
+  position: relative; /* Para posicionar las barras relativas a este contenedor */
+  height: 20px; /* Altura de la barra */
+  overflow: hidden; /* Para que no se desborden las barras */
+}
+.Contenedor-ImagenPrincipal .Contenedor-Votacion .vote-results .progress-bar-like {
+  height: 100%; /* Altura completa */
+  background-color: #007bff; /* Color azul para "Me gusta" */
+  width: 0; /* Inicialmente en 0% */
+  transition: width 0.3s; /* Transición suave al cambiar el ancho */
+}
+.Contenedor-ImagenPrincipal .Contenedor-Votacion .vote-results .progress-bar-dislike {
+  height: 100%; /* Altura completa */
+  background-color: #ec0018; /* Color rojo para "No me gusta" */
+  width: 0; /* Inicialmente en 0% */
+  transition: width 0.3s; /* Transición suave al cambiar el ancho */
+  position: absolute; /* Posición absoluta para superponerse */
+  left: 0; /* Alineado al inicio */
 }
 
+.Contenedor-OtherSuperHeros {
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  /*SuperMan*/
+  /*BatMan*/
+  /*Thor*/
+  /*SpiderMan*/
+}
+.Contenedor-OtherSuperHeros .SuperMan-card {
+  border: 1px solid #ccc; /* Borde del contenedor */
+  border-radius: 8px; /* Bordes redondeados */
+  margin: 20px; /* Espaciado externo */
+  padding: 10px; /* Espaciado interno */
+  width: 300px; /* Ancho del contenedor, ajustable según tus necesidades */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex; /* Flexbox para organizar la imagen y la votación */
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra los elementos */
+}
+.Contenedor-OtherSuperHeros .superman-image {
+  width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan {
+  text-align: center; /* Centra el texto dentro del contenedor de votación */
+  margin-top: 10px; /* Espaciado entre la imagen y el texto */
+}
+.Contenedor-OtherSuperHeros .BatMan-card {
+  border: 1px solid #ccc; /* Borde del contenedor */
+  border-radius: 8px; /* Bordes redondeados */
+  margin: 20px; /* Espaciado externo */
+  padding: 10px; /* Espaciado interno */
+  width: 300px; /* Ancho del contenedor, ajustable según tus necesidades */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex; /* Flexbox para organizar la imagen y la votación */
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra los elementos */
+}
+.Contenedor-OtherSuperHeros .BatMan-image {
+  width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: 440px; /* Mantiene la proporción de la imagen */
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan {
+  text-align: center; /* Centra el texto dentro del contenedor de votación */
+  margin-top: 10px; /* Espaciado entre la imagen y el texto */
+}
+.Contenedor-OtherSuperHeros .Thor-card {
+  border: 1px solid #ccc; /* Borde del contenedor */
+  border-radius: 8px; /* Bordes redondeados */
+  margin: 20px; /* Espaciado externo */
+  padding: 10px; /* Espaciado interno */
+  width: 300px; /* Ancho del contenedor, ajustable según tus necesidades */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex; /* Flexbox para organizar la imagen y la votación */
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra los elementos */
+}
+.Contenedor-OtherSuperHeros .Thor-image {
+  width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: 440px; /* Mantiene la proporción de la imagen */
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor {
+  text-align: center; /* Centra el texto dentro del contenedor de votación */
+  margin-top: 10px; /* Espaciado entre la imagen y el texto */
+}
+.Contenedor-OtherSuperHeros .SpiderMan-card {
+  border: 1px solid #ccc; /* Borde del contenedor */
+  border-radius: 8px; /* Bordes redondeados */
+  margin: 20px; /* Espaciado externo */
+  padding: 10px; /* Espaciado interno */
+  width: 300px; /* Ancho del contenedor, ajustable según tus necesidades */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex; /* Flexbox para organizar la imagen y la votación */
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra los elementos */
+}
+.Contenedor-OtherSuperHeros .SpiderMan-image {
+  width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: 440px; /* Mantiene la proporción de la imagen */
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan {
+  text-align: center; /* Centra el texto dentro del contenedor de votación */
+  margin-top: 10px; /* Espaciado entre la imagen y el texto */
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan h2,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan h2,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor h2,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan h2 {
+  margin: 0 0 10px;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan p {
+  margin: 10px 0;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-buttons,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-buttons,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-buttons,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-buttons {
+  margin: 15px 0;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-buttons button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-buttons button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-buttons button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-buttons button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-buttons button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-buttons button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-buttons button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-buttons button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-buttons button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-buttons button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-buttons button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-buttons button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-buttons #dislike-button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-buttons #dislike-button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-buttons #dislike-button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-buttons #dislike-button {
+  background: #dc3545;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-buttons #dislike-button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-buttons #dislike-button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-buttons #dislike-button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-buttons #dislike-button:hover {
+  background: #a71d2a;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-superman,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-BatMan,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-Thor,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-SpiderMan,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-superman,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-BatMan,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-Thor,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-SpiderMan,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-superman,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-BatMan,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-Thor,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-SpiderMan,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-superman,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-BatMan,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-Thor,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-SpiderMan {
+  margin-top: 10px;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-superman p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-BatMan p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-Thor p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-SpiderMan p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-superman p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-BatMan p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-Thor p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-SpiderMan p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-superman p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-BatMan p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-Thor p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-SpiderMan p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-superman p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-BatMan p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-Thor p,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-SpiderMan p {
+  font-weight: bold;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-superman button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-BatMan button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-Thor button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-SpiderMan button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-superman button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-BatMan button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-Thor button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-SpiderMan button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-superman button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-BatMan button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-Thor button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-SpiderMan button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-superman button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-BatMan button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-Thor button,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-SpiderMan button {
+  background: #28a745;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-superman button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-BatMan button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-Thor button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-SpiderMan button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-superman button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-BatMan button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-Thor button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-SpiderMan button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-superman button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-BatMan button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-Thor button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-SpiderMan button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-superman button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-BatMan button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-Thor button:hover,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-SpiderMan button:hover {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-superman button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-BatMan button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-Thor button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan #confirmation-message-SpiderMan button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-superman button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-BatMan button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-Thor button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan #confirmation-message-SpiderMan button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-superman button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-BatMan button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-Thor button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor #confirmation-message-SpiderMan button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-superman button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-BatMan button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-Thor button:active,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan #confirmation-message-SpiderMan button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-results,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-results,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-results,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-results {
+  margin-top: 15px;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-results .progress-bar-container,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-results .progress-bar-container,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-results .progress-bar-container,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-results .progress-bar-container {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 5px;
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-results .progress-bar-like,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-results .progress-bar-dislike,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-results .progress-bar-like,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-results .progress-bar-dislike,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-results .progress-bar-like,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-results .progress-bar-dislike,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-results .progress-bar-like,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-results .progress-bar-dislike {
+  height: 100%;
+  transition: width 0.3s;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-results .progress-bar-like,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-results .progress-bar-like,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-results .progress-bar-like,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-results .progress-bar-like {
+  background-color: #007bff;
+  width: 0;
+}
+.Contenedor-OtherSuperHeros .contenedor-votacion-SuperMan .vote-results .progress-bar-dislike,
+.Contenedor-OtherSuperHeros .contenedor-votacion-BatMan .vote-results .progress-bar-dislike,
+.Contenedor-OtherSuperHeros .contenedor-votacion-Thor .vote-results .progress-bar-dislike,
+.Contenedor-OtherSuperHeros .contenedor-votacion-SpiderMan .vote-results .progress-bar-dislike {
+  background-color: #dc3545;
+  width: 0;
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .Contenedor-ImagenPrincipal {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Contenedor-Votacion {
+    width: 90%;
+    margin-left: 0;
+  }
+  .Contenedor-OtherSuperHeros {
+    width: 100%;
+    justify-content: center;
+  }
+  .SuperMan-card, .BatMan-card, .Thor-card, .SpiderMan-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
 footer {
   text-align: center;
   margin-top: 20px;
