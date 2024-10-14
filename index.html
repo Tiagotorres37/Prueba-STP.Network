@@ -17,26 +17,25 @@
     </header>
 
     <main>
-        <div class="image-background">
-            <img src="assets/img/ironman.jpg" alt="Ironman" class="ironman-image">
-        </div>
-
-        <div class="hero-section">
-            <h2>Dinos tu opinión sobre Ironman?</h2>
-            <p>¿Cuál es tu voto?</p>
-            <div class="vote-buttons">
-                <button id="like-button">👍 Me gusta</button>
-                <button id="dislike-button">👎 No me gusta</button>
+        <div class="Contenedor-ImagenPrincipal">
+            <img src="assets/img/IronMan.jpg" alt="Ironman" class="ironman-image">
+            <div class="Contenedor-Votacion">
+                <h2>Dinos tu opinión sobre Ironman?</h2>
+                <p>¿Cuál es tu voto?</p>
+                <div class="vote-buttons">
+                    <button id="like-button">👍 Me gusta</button>
+                    <button id="dislike-button">👎 No me gusta</button>
+                </div>
+                <div id="confirmation-message" style="display: none;">
+                    <p>¡Tu voto ha sido registrado con éxito!</p>
+                    <button id="back-to-vote">Volver a votar</button>
+                </div>
+                <div class="vote-results">
+                    <p>Porcentaje de "Me gusta": <span id="percentage-like">0%</span></p>
+                    <p>Porcentaje de "No me gusta": <span id="percentage-dislike">0%</span></p>
+                </div>
             </div>
-            <div id="confirmation-message" style="display: none;">
-                <p>¡Tu voto ha sido registrado con éxito!</p>
-                <button id="back-to-vote">Volver a votar</button>
-            </div>
-            <div class="vote-results">
-                <p>Porcentaje de "Me gusta": <span id="percentage-like">0%</span></p>
-                <p>Porcentaje de "No me gusta": <span id="percentage-dislike">0%</span></p>
-            </div>
-        </div>
+        </div>        
     </main>
 
     <footer>

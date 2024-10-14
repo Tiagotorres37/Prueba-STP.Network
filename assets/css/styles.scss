@@ -6,10 +6,12 @@ body {
 }
 
 header {
+    height: auto;    
     background: #ff5f00; // Color de fondo del encabezado
     padding: 20px;
     text-align: center;
     color: white;
+    
 
     h1 {
         margin: 0;
@@ -27,37 +29,49 @@ header {
 }
 
 main {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
     position: relative;
-    text-align: center;
+    border-radius: 50px;
+    border:5px solid black;
+}
 
-    .image-background {
+.Contenedor-ImagenPrincipal {
+    position: relative;
+    width: 80%;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    .ironman-image {
         position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
-        z-index: 1; // Asegura que la imagen esté detrás
-
-        .ironman-image {
-            width: 100%; // Ancho completo
-            height: auto; // Mantiene la proporción
-            min-height: 100%; // Asegura que cubra toda la altura
-            object-fit: cover; // Cubre sin distorsión
-        }
+        object-fit: cover;
+        z-index: 1;
     }
 
-    .hero-section {
-        position: relative; // Asegura que esté encima de la imagen
-        z-index: 2; // Asegura que la encuesta esté en primer plano
-        background: rgba(255, 255, 255, 0.8); // Fondo semi-transparente para mejorar la legibilidad
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); // Aumenta la sombra para destacar más
-        margin: 20px auto; // Centra la encuesta
-        max-width: 800px; // Limita el ancho máximo de la encuesta
+    .Contenedor-Votacion {
+        margin-left: 550px;
+        position: relative;
+        background: rgba(255, 255, 255, 0); // Fondo semi-transparente
+        backdrop-filter: blur(10px); // Aplica un desenfoque al fondo
+        padding: 30px;
+        border-radius: 3000px;
+        z-index: 2;
+        width: 30%;
+        max-width: 800px;
+        text-align: center;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 
         h2 {
-            margin: 10px 0;
+            margin: 0 0 20px;
         }
 
         p {
@@ -68,21 +82,34 @@ main {
             margin: 20px 0;
 
             button {
-                background: #007bff; // Azul para botones
+                background: #007bff;
                 color: white;
                 border: none;
-                padding: 10px 15px;
-                border-radius: 5px;
+                padding: 12px 20px;
+                border-radius: 8px;
                 cursor: pointer;
-                margin: 0 5px;
+                margin: 0 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
 
                 &:hover {
-                    background: #0056b3; // Color más oscuro al pasar el ratón
+                    background: #0056b3;
+                    transform: translateY(-3px);
+                    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+                }
+
+                &:active {
+                    transform: translateY(1px);
+                    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
                 }
             }
 
             #dislike-button {
-                background: #dc3545; // Rojo para "no me gusta"
+                background: #dc3545;
+
+                &:hover {
+                    background: #a71d2a;
+                }
             }
         }
 
@@ -94,8 +121,26 @@ main {
             }
 
             button {
-                background: #28a745; // Verde para el botón "volver a votar"
+                background: #28a745;
+                padding: 12px 20px;
+                border-radius: 8px;
+                border: none;
+                color: white;
+                cursor: pointer;
                 margin-top: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background: #218838;
+                    transform: translateY(-3px);
+                    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+                }
+
+                &:active {
+                    transform: translateY(1px);
+                    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+                }
             }
         }
 
@@ -108,6 +153,7 @@ main {
         }
     }
 }
+
 
 footer {
     text-align: center;
