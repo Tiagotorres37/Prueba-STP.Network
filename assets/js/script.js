@@ -16,7 +16,7 @@ const heroesConfig = {
         elements: {
             likeButton: document.getElementById('like-button-superman'),
             dislikeButton: document.getElementById('dislike-button-superman'),
-            confirmationMessage: document.getElementById('confirmation-message-superman'),
+            confirmationMessage: document.getElementById('confirmation-message-SuperMan'),
             percentageLike: document.getElementById('percentage-like-superman'),
             percentageDislike: document.getElementById('percentage-dislike-superman'),
             backToVoteButton: document.getElementById('back-to-vote-superman')
@@ -67,17 +67,29 @@ for (const hero in heroesConfig) {
 }
 
 // Función para actualizar los porcentajes de votos para cada héroe
+debugger;
 function updatePercentages(hero) {
     const { votes, elements } = heroesConfig[hero];
     const totalVotes = votes.like + votes.dislike;
     const likePercentage = totalVotes ? Math.round((votes.like / totalVotes) * 100) : 0;
     const dislikePercentage = totalVotes ? Math.round((votes.dislike / totalVotes) * 100) : 0;
 
+    // Actualizar los textos de porcentaje
     elements.percentageLike.textContent = `${likePercentage}%`;
     elements.percentageDislike.textContent = `${dislikePercentage}%`;
+
+    // Actualizar las barras de progreso
+    const likeBar = elements.confirmationMessage.parentElement.querySelector('.progress-bar-like');
+    const dislikeBar = elements.confirmationMessage.parentElement.querySelector('.progress-bar-dislike');
+    
+    if (likeBar && dislikeBar) {
+        likeBar.style.width = `${likePercentage}%`;
+        dislikeBar.style.width = `${dislikePercentage}%`;
+    }
 }
 
 // Función para manejar el voto de un héroe específico
+
 function vote(hero, type) {
     const { votes, elements } = heroesConfig[hero];
     votes[type]++;
@@ -100,6 +112,7 @@ function resetVote(hero) {
 
 // Asignar eventos a los botones de cada héroe
 for (const hero in heroesConfig) {
+    
     const { elements } = heroesConfig[hero];
     elements.likeButton.addEventListener('click', () => vote(hero, 'like'));
     elements.dislikeButton.addEventListener('click', () => vote(hero, 'dislike'));
