@@ -278,9 +278,6 @@ main {
         text-align: center; /* Centra el texto dentro del contenedor de votación */
         margin-top: 10px; /* Espaciado entre la imagen y el texto */
     }
-            
-    
-    
             .contenedor-votacion-SuperMan,
             .contenedor-votacion-BatMan,
             .contenedor-votacion-Thor,
@@ -400,28 +397,6 @@ main {
                 }
             }
 }
-@media (max-width: 768px) {
-    .Contenedor-ImagenPrincipal {
-        flex-direction: column; // Cambia a columna en pantallas más pequeñas
-        align-items: center;
-    }
-
-    .Contenedor-Votacion {
-        width: 90%; // Ancho más pequeño en móviles
-        margin-left: 0; // Elimina el margen izquierdo
-    }
-
-    .Contenedor-OtherSuperHeros {
-        width: 100%; // Asegura que se muestre correctamente en móviles
-        justify-content: center; // Centra las tarjetas
-    }
-
-    .SuperMan-card, .BatMan-card, .Thor-card, .SpiderMan-card {
-        width: 100%; // Tarjetas ocupan el ancho completo en móviles
-        margin: 10px 0; // Espacio entre tarjetas
-    }
-}
-
 
 
 footer {

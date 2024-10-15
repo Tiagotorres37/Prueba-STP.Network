@@ -457,24 +457,6 @@ main {
   left: 0;
 }
 
-@media (max-width: 768px) {
-  .Contenedor-ImagenPrincipal {
-    flex-direction: column;
-    align-items: center;
-  }
-  .Contenedor-Votacion {
-    width: 90%;
-    margin-left: 0;
-  }
-  .Contenedor-OtherSuperHeros {
-    width: 100%;
-    justify-content: center;
-  }
-  .SuperMan-card, .BatMan-card, .Thor-card, .SpiderMan-card {
-    width: 100%;
-    margin: 10px 0;
-  }
-}
 footer {
   text-align: center;
   margin-top: 20px;

@@ -1,67 +1,107 @@
-// Inicializamos los votos
-let votes = {
-    like: 0,
-    dislike: 0
+// Configuración inicial para cada héroe
+const heroesConfig = {
+    IronMan: {
+        votes: { like: 0, dislike: 0 },
+        elements: {
+            likeButton: document.getElementById('like-button'),
+            dislikeButton: document.getElementById('dislike-button'),
+            confirmationMessage: document.getElementById('confirmation-message'),
+            percentageLike: document.getElementById('percentage-like'),
+            percentageDislike: document.getElementById('percentage-dislike'),
+            backToVoteButton: document.getElementById('back-to-vote')
+        }
+    },
+    Superman: {
+        votes: { like: 0, dislike: 0 },
+        elements: {
+            likeButton: document.getElementById('like-button-superman'),
+            dislikeButton: document.getElementById('dislike-button-superman'),
+            confirmationMessage: document.getElementById('confirmation-message-superman'),
+            percentageLike: document.getElementById('percentage-like-superman'),
+            percentageDislike: document.getElementById('percentage-dislike-superman'),
+            backToVoteButton: document.getElementById('back-to-vote-superman')
+        }
+    },
+    BatMan: {
+        votes: { like: 0, dislike: 0 },
+        elements: {
+            likeButton: document.getElementById('like-button-BatMan'),
+            dislikeButton: document.getElementById('dislike-button-BatMan'),
+            confirmationMessage: document.getElementById('confirmation-message-BatMan'),
+            percentageLike: document.getElementById('percentage-like-BatMan'),
+            percentageDislike: document.getElementById('percentage-dislike-BatMan'),
+            backToVoteButton: document.getElementById('back-to-vote-BatMan')
+        }
+    },
+    Thor: {
+        votes: { like: 0, dislike: 0 },
+        elements: {
+            likeButton: document.getElementById('like-button-Thor'),
+            dislikeButton: document.getElementById('dislike-button-Thor'),
+            confirmationMessage: document.getElementById('confirmation-message-Thor'),
+            percentageLike: document.getElementById('percentage-like-Thor'),
+            percentageDislike: document.getElementById('percentage-dislike-Thor'),
+            backToVoteButton: document.getElementById('back-to-vote-Thor')
+        }
+    },
+    SpiderMan: {
+        votes: { like: 0, dislike: 0 },
+        elements: {
+            likeButton: document.getElementById('like-button-SpiderMan'),
+            dislikeButton: document.getElementById('dislike-button-SpiderMan'),
+            confirmationMessage: document.getElementById('confirmation-message-SpiderMan'),
+            percentageLike: document.getElementById('percentage-like-SpiderMan'),
+            percentageDislike: document.getElementById('percentage-dislike-SpiderMan'),
+            backToVoteButton: document.getElementById('back-to-vote-SpiderMan')
+        }
+    }
 };
 
-// Recuperamos los votos del localStorage si existen
-const storedVotes = localStorage.getItem('votes');
-if (storedVotes) {
-    votes = JSON.parse(storedVotes);
+// Cargar los votos guardados en localStorage para cada héroe
+for (const hero in heroesConfig) {
+    const storedVotes = localStorage.getItem(`votes-${hero}`);
+    if (storedVotes) {
+        heroesConfig[hero].votes = JSON.parse(storedVotes);
+    }
+    updatePercentages(hero);
 }
 
-// Variables de referencia en el DOM
-const likeButton = document.getElementById('like-button');
-const dislikeButton = document.getElementById('dislike-button');
-const confirmationMessage = document.getElementById('confirmation-message');
-const percentageLike = document.getElementById('percentage-like');
-const percentageDislike = document.getElementById('percentage-dislike');
-const backToVoteButton = document.getElementById('back-to-vote');
-
-// Función para actualizar los porcentajes de votos
-const updatePercentages = () => {
+// Función para actualizar los porcentajes de votos para cada héroe
+function updatePercentages(hero) {
+    const { votes, elements } = heroesConfig[hero];
     const totalVotes = votes.like + votes.dislike;
     const likePercentage = totalVotes ? Math.round((votes.like / totalVotes) * 100) : 0;
     const dislikePercentage = totalVotes ? Math.round((votes.dislike / totalVotes) * 100) : 0;
 
-    // Actualiza el texto de los porcentajes
-    percentageLike.textContent = `${likePercentage}%`;
-    percentageDislike.textContent = `${dislikePercentage}%`;
+    elements.percentageLike.textContent = `${likePercentage}%`;
+    elements.percentageDislike.textContent = `${dislikePercentage}%`;
+}
 
-    // Actualiza la barra de progreso
-    document.querySelector('.progress-bar-like').style.width = `${likePercentage}%`;
-    document.querySelector('.progress-bar-dislike').style.width = `${dislikePercentage}%`;
-};
-
-// Actualizamos los porcentajes y las barras al cargar la página
-updatePercentages();
-
-// Función para manejar el voto
-const vote = (type) => {
-    // Guardamos el voto en el objeto y en localStorage
+// Función para manejar el voto de un héroe específico
+function vote(hero, type) {
+    const { votes, elements } = heroesConfig[hero];
     votes[type]++;
-    localStorage.setItem('votes', JSON.stringify(votes));
-    
-    // Actualizamos porcentajes y barras
-    updatePercentages();
-    
-    // Ocultamos los botones de votar
-    likeButton.style.display = 'none';
-    dislikeButton.style.display = 'none';
-    
-    // Mostramos el mensaje de confirmación
-    confirmationMessage.style.display = 'block';
-};
+    localStorage.setItem(`votes-${hero}`, JSON.stringify(votes));
+    updatePercentages(hero);
 
-// Evento para volver a votar
-backToVoteButton.addEventListener('click', () => {
-    confirmationMessage.style.display = 'none'; // Oculta el mensaje de confirmación
-    
-    // Volvemos a mostrar los botones de votar
-    likeButton.style.display = 'inline-block';
-    dislikeButton.style.display = 'inline-block';
-});
+    // Ocultar los botones de votar y mostrar el mensaje de confirmación
+    elements.likeButton.style.display = 'none';
+    elements.dislikeButton.style.display = 'none';
+    elements.confirmationMessage.style.display = 'block';
+}
 
-// Eventos para los botones de voto
-likeButton.addEventListener('click', () => vote('like'));
-dislikeButton.addEventListener('click', () => vote('dislike'));
+// Función para reiniciar el estado de los botones y mensajes
+function resetVote(hero) {
+    const { elements } = heroesConfig[hero];
+    elements.confirmationMessage.style.display = 'none';
+    elements.likeButton.style.display = 'inline-block';
+    elements.dislikeButton.style.display = 'inline-block';
+}
+
+// Asignar eventos a los botones de cada héroe
+for (const hero in heroesConfig) {
+    const { elements } = heroesConfig[hero];
+    elements.likeButton.addEventListener('click', () => vote(hero, 'like'));
+    elements.dislikeButton.addEventListener('click', () => vote(hero, 'dislike'));
+    elements.backToVoteButton.addEventListener('click', () => resetVote(hero));
+}
